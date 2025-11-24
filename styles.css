@@ -1,0 +1,23 @@
+/* Custom styles for Pet Projekt */
+:root{
+    --brand-color: #0d6efd;
+}
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+.navbar-brand{
+    font-weight: 700;
+}
+.card-title{
+    color: var(--brand-color);
+}
+footer{
+    border-top: 1px solid #e9ecef;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px){
+    .display-5{font-size:1.6rem}
+}

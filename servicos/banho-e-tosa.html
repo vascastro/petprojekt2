@@ -3,49 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Projekt</title>
+    <title>Pet Projekt — Banho e Tosa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Pet Projekt</h1>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../index.html#sobre">Sobre Nós</a></li>
-                <li><a href="../../index.html#servicos">Serviços</a></li>
-                <li><a href="../../index.html#produtos">Produtos</a></li>
-                <li><a href="../../index.html#contato">Contato</a></li>
-                <li>(31) 3333-3333</li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Pet Projekt</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#sobre">Sobre Nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#produtos">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#contato">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="tel:+553133333333">(31) 3333-3333</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <section id="servico-detalhes">
-        <h2>Banho e Tosa</h2>
-        <img src="banhoetosa.webp" alt="Banho e Tosa" width="300" height="200">
-        <p>Oferecemos banho completo e tosa higiênica ou estilizada, com produtos hipoalergênicos e equipe qualificada. Serviços adicionais: corte de unhas, limpeza de ouvidos e hidratação.</p>
-        <ul>
-            <li>Banho completo</li>
-            <li>Tosa higiênica e tosa estilizada</li>
-            <li>Corte de unhas e limpeza de ouvidos</li>
-            <li>Produtos antialérgicos e secagem profissional</li>
-        </ul>
-        <p>Preços a partir de: <strong>R$ 60,00 (sem tele-busca)</strong> / <strong>R$ 90,00 (com tele-busca)</strong> — valores podem variar conforme porte e condição do pet.</p>
 
-        <button type="submit">Solicitar Agendamento</button>
-        <p>Agendamento rápido: <a href="tel:+553133333333">(31) 3333-3333</a></p>
-    </section>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../index.html#sobre">Sobre Nós</a></li>
-                <li><a href="../../index.html#servicos">Serviços</a></li>
-                <li><a href="../../index.html#produtos">Produtos</a></li>
-                <li><a href="../../index.html#contato">Contato</a></li>
-                <li>(31) 3333-3333</li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 Pet Projekt by Vas Castro. Todos os direitos reservados.</p>
+    <main class="container py-5">
+        <section id="servico-detalhes" class="row g-4">
+            <div class="col-md-5">
+                <img src="banhoetosa.webp" alt="Banho e Tosa" class="img-fluid rounded">
+            </div>
+            <div class="col-md-7">
+                <h2 class="h3">Banho e Tosa</h2>
+                <p>Oferecemos banho completo e tosa higiênica ou estilizada, com produtos hipoalergênicos e equipe qualificada. Serviços adicionais: corte de unhas, limpeza de ouvidos e hidratação.</p>
+                <ul>
+                    <li>Banho completo</li>
+                    <li>Tosa higiênica e tosa estilizada</li>
+                    <li>Corte de unhas e limpeza de ouvidos</li>
+                    <li>Produtos antialérgicos e secagem profissional</li>
+                </ul>
+                <p>Preços a partir de: <strong>R$ 60,00 (sem tele-busca)</strong> / <strong>R$ 90,00 (com tele-busca)</strong> — valores podem variar conforme porte e condição do pet.</p>
+            </div>
+            <div class="col-12">
+                <!-- Formulário de agendamento -->
+                <form id="agendamento-form">
+                    <h2>Agendamento</h2>
+                    <h3 class="h5 mt-3">Seus dados</h3>
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <label for="cliente-nome" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id="cliente-nome" name="cliente-nome" required>
+                            <div class="invalid-feedback">Por favor, informe seu nome.</div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="cliente-endereco" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="cliente-endereco" name="cliente-endereco" required>
+                            <div class="invalid-feedback">Por favor, informe seu endereço.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="cliente-cpf" class="form-label">CPF</label>
+                            <input type="text" pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$" class="form-control" id="cliente-cpf" name="cliente-cpf" placeholder="000.000.000-00" required>
+                            <div class="form-text">Formato aceito: 00000000000 ou 000.000.000-00</div>
+                            <div class="invalid-feedback">CPF inválido ou ausente.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="cliente-genero" class="form-label">Gênero</label>
+                            <select id="cliente-genero" name="cliente-genero" class="form-select" required>
+                                <option value="">Escolha...</option>
+                                <option>Feminino</option>
+                                <option>Masculino</option>
+                                <option>Outro</option>
+                            </select>
+                            <div class="invalid-feedback">Selecione uma opção.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="cliente-telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="cliente-telefone" name="cliente-telefone" placeholder="(31) 99999-9999" required>
+                            <div class="invalid-feedback">Por favor, informe um telefone válido.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="cliente-email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="cliente-email" name="cliente-email" placeholder="seu@email.com" required>
+                            <div class="invalid-feedback">Por favor, informe um e-mail válido.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="data-servico" class="form-label">Data desejada</label>
+                            <input type="date" class="form-control" id="data-servico" name="data-servico" required>
+                            <div class="invalid-feedback">Por favor, escolha uma data.</div>
+                        </div>
+                    </div>
+
+                    <h3 class="h5 mt-4">Dados do pet</h3>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="pet-nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="pet-nome" name="pet-nome" required>
+                            <div class="invalid-feedback">Informe o nome do pet.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pet-raca" class="form-label">Raça</label>
+                            <input type="text" class="form-control" id="pet-raca" name="pet-raca">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="pet-idade" class="form-label">Idade</label>
+                            <input type="number" min="0" class="form-control" id="pet-idade" name="pet-idade">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="pet-genero" class="form-label">Gênero do pet</label>
+                            <select id="pet-genero" name="pet-genero" class="form-select">
+                                <option value="">Não informado</option>
+                                <option>Fêmea</option>
+                                <option>Macho</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Opção de atendimento</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="opcao-atendimento" id="opcao-telebusca" value="tele-busca" required>
+                                <label class="form-check-label" for="opcao-telebusca">Tele-busca</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="opcao-atendimento" id="opcao-entrega" value="entrega-local" required>
+                                <label class="form-check-label" for="opcao-entrega">Entrega do pet no local</label>
+                            </div>
+                            <div class="invalid-feedback">Selecione uma opção de atendimento.</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-primary" type="submit">Enviar solicitação</button>
+                        <button class="btn btn-secondary" type="reset">Limpar</button>
+                    </div>
+                </form>
+
+                <p class="mt-3">Agendamento rápido: <a href="tel:+553133333333">(31) 3333-3333</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <nav>
+                <ul class="list-inline mb-2 mb-md-0">
+                    <li class="list-inline-item"><a href="../index.html">Home</a></li>
+                    <li class="list-inline-item"><a href="../index.html#sobre">Sobre</a></li>
+                    <li class="list-inline-item"><a href="../index.html#servicos">Serviços</a></li>
+                    <li class="list-inline-item"><a href="../index.html#produtos">Produtos</a></li>
+                    <li class="list-inline-item"><a href="../index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <p class="mb-0">&copy; 2024 Pet Projekt by Vas Castro. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
